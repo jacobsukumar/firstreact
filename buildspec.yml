@@ -1,0 +1,30 @@
+version: 
+
+phases:
+  install:
+    commands:
+      #install node
+      - echo Installing NodeJS ...
+      - apt install -y nodejs
+      - echo Node Installed version...
+      - node -v
+      
+      #install yarn?
+      - echo Installing Node package manager
+      - apt install npm
+  pre_build:
+    commands:
+      #install dependencies
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      #test?
+      #build
+      - npm run build
+
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: dist
